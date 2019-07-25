@@ -1,7 +1,7 @@
 project: hpademo
 environments:
   - name: dev
-    namespace: hpa-demo
+    namespace: hpa-dev
     services:
       - name: php-apache
         application: sampleproject
