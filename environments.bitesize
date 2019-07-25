@@ -1,11 +1,11 @@
-project: hpa
+project: hpademo
 environments:
   - name: dev
     namespace: hpa-demo
     services:
       - name: php-apache
-        application: hpa-example
-        version: v1.0.0
+        application: sampleproject
+        version: 1.0
         port: 80
         replicas: 2
         deployment:
