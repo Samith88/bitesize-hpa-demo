@@ -15,7 +15,7 @@ environments:
           max_replicas: 5
           metric:
            name: cpu
-           target_average_utilization: 50
+           target_average_utilization: 75
         requests:
           cpu: 200m           
         env:
