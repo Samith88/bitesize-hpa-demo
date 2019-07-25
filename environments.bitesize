@@ -1,0 +1,23 @@
+project: hpa
+environments:
+  - name: dev
+    namespace: hpa-demo
+    services:
+      - name: php-apache
+        application: hpa-example
+        version: v1.0.0
+        port: 80
+        replicas: 2
+        deployment:
+          method: rolling-upgrade
+        hpa:
+          min_replicas: 2
+          max_replicas: 5
+          metric:
+           name: cpu
+           target_average_utilization: 50
+        requests:
+          cpu: 200m           
+        env:
+          - name: TEST_ENV
+            value: test
