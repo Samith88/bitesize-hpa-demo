@@ -17,7 +17,15 @@ environments:
            name: cpu
            target_average_utilization: 75
         requests:
-          cpu: 200m           
+          cpu: 200m
+        readiness_probe:
+          handler:
+            http_get:
+              path: /
+              port: 80
+          initial_delay_seconds: 70
+          period_seconds: 120
+          timeout_seconds: 120          
         env:
           - name: TEST_ENV
             value: test
